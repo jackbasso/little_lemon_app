@@ -1,6 +1,6 @@
 function Footer(props) {
   return (
-    <footer>
+    <footer className="footer">
       <img src="./assets/logo.svg" alt="Logo footer" />
       <div>
         <h3>Navigation</h3>
