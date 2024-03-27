@@ -1,7 +1,7 @@
 import { useState } from "react";
 import logo from "../assets/Logo.svg";
 
-function Nav(props) {
+const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -41,6 +41,6 @@ function Nav(props) {
       </ul>
     </nav>
   );
-}
+};
 
 export default Nav;
