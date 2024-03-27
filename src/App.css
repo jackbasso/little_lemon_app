@@ -187,7 +187,7 @@ label {
 .menu-items {
   /* height: 400px; */
   width: 350px;
-  background: #a9c8be;
+  background: #edefee;
   border-radius: 8px;
 }
 
@@ -306,4 +306,8 @@ footer ul li {
 
 .hidden {
   display: none;
+}
+
+.footer-title {
+  color: #000;
 }

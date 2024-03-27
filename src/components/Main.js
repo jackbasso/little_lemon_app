@@ -28,7 +28,7 @@ function Main() {
     return result;
   };
 
-  const submitAPI = function (formData) {
+  const submitAPI = (formData) => {
     return true;
   };
 
@@ -36,18 +36,19 @@ function Main() {
   const [state, dispatch] = useReducer(updateTimes, initialState);
 
   function updateTimes(state, date) {
-    return { availableTimes: fetchAPI(new Date()) };
+    return { availableTimes: fetchAPI(new Date(date)) };
   }
 
   const navigate = useNavigate();
-  function submitForm(formData) {
-    if (submitAPI(formData)) {
+
+  const submitForm = (formData) => {
+    if (submitAPI) {
       navigate("/confirmed");
     }
-  }
+  };
 
   return (
-    <main>
+    <main className="main">
       <Routes>
         <Route path="/" element={<Header />} />
         <Route

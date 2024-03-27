@@ -1,14 +1,18 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function BookingForm(props) {
+const BookingForm = (props) => {
   const [date, setDate] = useState("");
   const [times, setTimes] = useState("");
   const [guests, setGuests] = useState("");
   const [occasion, setOccasion] = useState("");
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.SubmitForm(e);
+    navigate("/confirmed");
+    //props.SubmitForm(e);
   };
 
   const handleChange = (e) => {
@@ -22,6 +26,7 @@ function BookingForm(props) {
         <form onSubmit={handleSubmit}>
           <fieldset>
             <div>
+              <h2 className="footer-title">Book your table</h2>
               <label htmlFor="book-date">Choose Date</label>
               <input id="book-date" value={date} onChange={(e) => handleChange(e.target.value)} type="date" required />
             </div>
@@ -52,12 +57,12 @@ function BookingForm(props) {
             </div>
             {/* submit button */}
             <div className="btnReceive">
-              <input aria-label="On Click" type="submit" value={"Make Your Reservation"} />
+              <input aria-label="On Click" type="submit" value={"Submit Reservation"} />
             </div>
           </fieldset>
         </form>
       </section>
     </header>
   );
-}
+};
 export default BookingForm;
